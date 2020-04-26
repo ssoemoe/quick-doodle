@@ -7,24 +7,18 @@ var isMousedown = false; // to keep track of correct mouse moves
 
 // draws the path following the context.beginPath() of a dot
 // it moves to itself for another offset
-function drawPath(event) {
-    if (!isMousedown)
-        return;
-    context.lineTo(event.offsetX, event.offsetY);
+function drawPath(x, y) {
+    context.lineTo(x, y);
     context.stroke();
-    context.moveTo(event.offsetX, event.offsetY);
+    context.moveTo(x, y);
 }
 
 // when the mouse is pressed down for the first time or releases the press, a dot needs to be drawn
-function drawDot() {
+function drawDot(x, y) {
     context.beginPath(); // beginning of the stroke
-    context.moveTo(event.offsetX, event.offsetY);
-    context.lineTo(event.offsetX, event.offsetY);
+    context.moveTo(x, y);
+    context.lineTo(x, y);
     context.stroke(); // a dot
-}
-
-function erase() {
-
 }
 
 canvas.addEventListener('mousedown', function (event) {
@@ -32,10 +26,21 @@ canvas.addEventListener('mousedown', function (event) {
     context.lineWidth = settings.strokePixels;
     context.strokeStyle = settings.strokeColor;
     isMousedown = true;
-    drawDot();
+    actionHistory = actionHistory.splice(0, currentViewIndex + 1);
+    drawDot(event.offsetX, event.offsetY);
+    recent.push({ action: "drawDot", x: event.offsetX, y: event.offsetY, currentSettings: { ...settings } });
 });
 canvas.addEventListener('mouseup', function (event) {
     isMousedown = false;
-    drawDot();
+    drawDot(event.offsetX, event.offsetY);
+    recent.push({ action: "drawDot", x: event.offsetX, y: event.offsetY, currentSettings: { ...settings } });
+    actionHistory.push(recent);
+    recent = []; //reset recent actions array
+    currentViewIndex = actionHistory.length - 1;
 });
-canvas.addEventListener('mousemove', drawPath);
+canvas.addEventListener('mousemove', function (event) {
+    if (!isMousedown)
+        return;
+    drawPath(event.offsetX, event.offsetY);
+    recent.push({ action: "drawPath", x: event.offsetX, y: event.offsetY, currentSettings: { ...settings } });
+});

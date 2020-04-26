@@ -26,9 +26,8 @@
         <div id="tool-buttons">
             <button id="options-btn"><img src="./images/options.png" height="30px"></button>
             <button id="undo-btn"><img src="./images/undo.svg" height="30px"></button>
-            <button id="undo-btn"><img src="./images/redo.svg" height="30px"></button>
+            <button id="redo-btn"><img src="./images/redo.svg" height="30px"></button>
             <button id="clear-btn"><img src="./images/clear.png" height="30px"></button>
-            <button id="eraser-btn"><img src="./images/eraser.png" height="30px"></button>
             <button id="save-btn"><img src="./images/save.png" height="30px"></button>
         </div>
     </div>
@@ -43,7 +42,7 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="all-options">
-                <label>Pixels</label>
+                <label>Stroke width</label>
                 <div id="pixels-sample"></div>
                 <input type="range" min="1" max="30" value="5" class="slider" id="pen-pixels">
                 <br>
@@ -76,6 +75,7 @@
     <script src="./js/settings.js"></script>
     <script src="./js/doodle.js"></script>
     <script src="./js/clear.js"></script>
+    <script src="./js/historyView.js"></script>
     <script src="./js/image-export.js"></script>
 </body>
 

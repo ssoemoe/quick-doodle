@@ -8,7 +8,7 @@ exportBtn.addEventListener('click', function (event) {
             downloadLink.download = `quick-doodle.${imageRadioButtons[i].value}`;
             downloadLink.href = canvas.toDataURL(`image/${imageRadioButtons[i].value}`);
             document.body.appendChild(downloadLink);
-            downloadLink.click();
+            downloadLink.click(); //Open the url under the hood
         }
     }
 });
