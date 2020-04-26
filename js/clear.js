@@ -6,4 +6,5 @@ clearBtn.addEventListener('click', function (event) {
             action: "clear"
         }
     ]);
+    currentViewIndex = actionHistory.length - 1;
 });

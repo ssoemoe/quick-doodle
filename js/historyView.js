@@ -5,7 +5,7 @@ undoBtn.addEventListener('click', function (event) {
         processCanvas(currentViewIndex, true);
         context.clearRect(0, 0, canvas.width, canvas.height);
         for (let i = 0; i < currentViewIndex; i++) {
-            processCanvas(i, false); // refills every hole
+            processCanvas(i, false); // re-creates every past action before this undone current action
         }
         if (currentViewIndex - 1 >= 0)
             currentViewIndex--;
