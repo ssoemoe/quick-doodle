@@ -24,12 +24,7 @@ canvas {
     background-color: greenyellow;
 }
 
-#undo-btn {
-    border-radius: 10px;
-    background-color: rgba(120,120,120,0.3);
-}
-
-#eraser-btn {
+#eraser-btn, #undo-btn {
     border-radius: 10px;
     background-color: rgba(120,120,120,0.3);
 }
