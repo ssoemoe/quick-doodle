@@ -1,1 +1,0 @@
-// pixels per drawing

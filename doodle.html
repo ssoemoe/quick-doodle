@@ -13,7 +13,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./styles/doodle.css">
+    <link href="./styles/modal.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/doodle.css">
 </head>
 
 <body>
@@ -32,6 +33,16 @@
     <div id="footer">
         Shane Khant Soe Moe &copy; 2020
     </div>
+    <!-- The Modal (this modal code is taken from https://www.w3schools.com/howto/howto_css_modals.asp), but I coded the contents inside the modal -->
+    <div id="options-modal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Some text in the Modal..</p>
+        </div>
+    </div>
+    <script src="./js/modal.js"></script>
     <script src="./js/doodle.js"></script>
 </body>
 
