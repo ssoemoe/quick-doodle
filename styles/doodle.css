@@ -6,8 +6,6 @@ canvas {
     margin: 10px;
     border: 1px solid black;
     border-radius: 10px;
-    width: 98%;
-    height: 500px;
     cursor: crosshair;
 }
 
@@ -38,6 +36,10 @@ canvas {
     height: 5px;
     width: 130px;
     margin-top: 15px;
+}
+
+#stroke-color, #color-label {
+    margin-top: 15px;;
 }
 
 #pen-pixels-index {
