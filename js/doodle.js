@@ -21,7 +21,7 @@ function drawDot(x, y) {
     context.stroke(); // a dot
 }
 
-canvas.addEventListener('mousedown', function (event) {
+function startDrawing(event) {
     // set the context styles
     context.lineWidth = settings.strokePixels;
     context.strokeStyle = settings.strokeColor;
@@ -29,18 +29,27 @@ canvas.addEventListener('mousedown', function (event) {
     actionHistory = actionHistory.splice(0, currentViewIndex + 1);
     drawDot(event.offsetX, event.offsetY);
     recent.push({ action: "drawDot", x: event.offsetX, y: event.offsetY, currentSettings: { ...settings } });
-});
-canvas.addEventListener('mouseup', function (event) {
+}
+
+function endDrawing(event) {
     isMousedown = false;
     drawDot(event.offsetX, event.offsetY);
     recent.push({ action: "drawDot", x: event.offsetX, y: event.offsetY, currentSettings: { ...settings } });
     actionHistory.push(recent);
     recent = []; //reset recent actions array
     currentViewIndex = actionHistory.length - 1;
-});
-canvas.addEventListener('mousemove', function (event) {
+}
+
+function drawing(event) {
     if (!isMousedown)
         return;
     drawPath(event.offsetX, event.offsetY);
     recent.push({ action: "drawPath", x: event.offsetX, y: event.offsetY, currentSettings: { ...settings } });
-});
+}
+
+canvas.addEventListener('mousedown', startDrawing);
+canvas.addEventListener('touchstart', startDrawing);
+canvas.addEventListener('mouseup', endDrawing);
+canvas.addEventListener('touchend', endDrawing);
+canvas.addEventListener('mousemove', drawing);
+canvas.addEventListener('touchmove', drawing);
