@@ -29,6 +29,33 @@ canvas {
     background-color: rgba(120,120,120,0.3);
 }
 
+#pen-pixels {
+    margin-top: 10px;
+}
+
+#pixels-sample {
+    background-color: black;
+    height: 5px;
+    width: 130px;
+    margin-top: 15px;
+}
+
+#pen-pixels-index {
+    width: 4em;
+}
+
+#save-and-cancel button {
+    margin: 15px;
+    border-radius: 10px;
+}
+
+#save-btn {
+    background-color: rgba(0,128,0,0.3);
+}
+
+#cancel-btn {
+    background-color: red;
+}
 
 #footer {
     text-align: center;

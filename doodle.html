@@ -22,11 +22,11 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <div id="title">
-        <h1>Quick Doodle</h1>
+        <h2>Quick Doodle</h2>
         <div id="tool-buttons">
-            <button id="options-btn"><img src="./images/options.png" height="35px"></button>
-            <button id="undo-btn"><img src="./images/undo.svg" height="35px"></button>
-            <button id="eraser-btn"><img src="./images/eraser.png" height="35px"></button>
+            <button id="options-btn"><img src="./images/options.png" height="30px"></button>
+            <button id="undo-btn"><img src="./images/undo.svg" height="30px"></button>
+            <button id="eraser-btn"><img src="./images/eraser.png" height="30px"></button>
         </div>
     </div>
     <canvas></canvas>
@@ -39,9 +39,16 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Some text in the Modal..</p>
+            <div class="all-options">
+                <label>Pixels</label>
+                <div id="pixels-sample"></div>
+                <input type="range" min="1" max="30" value="5" class="slider" id="pen-pixels">
+                <br>
+                <label>Color</label>
+            </div>
         </div>
     </div>
+    <script src="./js/settings.js"></script>
     <script src="./js/modal.js"></script>
     <script src="./js/doodle.js"></script>
 </body>

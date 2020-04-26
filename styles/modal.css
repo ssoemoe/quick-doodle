@@ -22,9 +22,13 @@
     padding: 20px;
     border: 1px solid #888;
     border-radius: 10px;
-    width: 80%;
+    width: 200px;
   }
   
+  .all-options {
+    margin-top: 10px;
+  }
+
   /* The Close Button */
   .close {
     color: #aaaaaa;
