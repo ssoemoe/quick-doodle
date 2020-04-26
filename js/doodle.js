@@ -7,8 +7,6 @@ context.lineWidth = settings.strokePixels;
 context.strokeStyle = settings.strokeColor;
 context.lineCap = "round";
 var isMousedown = false; // to keep track of correct mouse moves
-var recentOffsets = [];
-var historyOffsets = [];
 
 // draws the path following the context.beginPath() of a dot
 // it moves to itself for another offset
@@ -28,19 +26,16 @@ function drawDot() {
     context.stroke(); // a dot
 }
 
-function undo() {
+function erase() {
 
 }
 
 canvas.addEventListener('mousedown', function (event) {
     isMousedown = true;
-    recentOffsets.push({ x: event.offsetX, y: event.offsetY });
     drawDot();
 });
 canvas.addEventListener('mouseup', function (event) {
     isMousedown = false;
-    recentOffsets.push({ x: event.offsetX, y: event.offsetY });
-    historyOffsets.push(recentOffsets); //record offsets for undo feature
     drawDot();
 });
 canvas.addEventListener('mousemove', drawPath);

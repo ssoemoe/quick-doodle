@@ -27,6 +27,10 @@ canvas {
     background-color: rgba(120,120,120,0.3);
 }
 
+#clear-btn {
+    border-radius: 10px;
+}
+
 #pen-pixels {
     margin-top: 10px;
 }
