@@ -1,0 +1,40 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+canvas {
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 98%;
+    height: 500px;
+    cursor: crosshair;
+}
+
+#title {
+    text-align: center;
+}
+
+#tool-buttons >button {
+    margin-right: 10px;
+}
+
+#options-btn {
+    border-radius: 10px;
+    background-color: greenyellow;
+}
+
+#undo-btn {
+    border-radius: 10px;
+    background-color: rgba(120,120,120,0.3);
+}
+
+#eraser-btn {
+    border-radius: 10px;
+    background-color: rgba(120,120,120,0.3);
+}
+
+
+#footer {
+    text-align: center;
+}
