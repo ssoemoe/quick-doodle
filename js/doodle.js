@@ -2,9 +2,6 @@ var canvas = document.querySelector('canvas');
 canvas.height = 500;
 canvas.width = window.innerWidth;
 var context = canvas.getContext('2d');
-// set the context styles
-context.lineWidth = settings.strokePixels;
-context.strokeStyle = settings.strokeColor;
 context.lineCap = "round";
 var isMousedown = false; // to keep track of correct mouse moves
 
@@ -31,6 +28,9 @@ function erase() {
 }
 
 canvas.addEventListener('mousedown', function (event) {
+    // set the context styles
+    context.lineWidth = settings.strokePixels;
+    context.strokeStyle = settings.strokeColor;
     isMousedown = true;
     drawDot();
 });

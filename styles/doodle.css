@@ -64,6 +64,14 @@ canvas {
     background-color: red;
 }
 
+input[type="radio"] {
+    margin: 10px;
+}
+
+#export-btn {
+    border-radius: 10px; padding: 4px;background-color: antiquewhite;
+}
+
 #footer {
     text-align: center;
 }

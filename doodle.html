@@ -52,10 +52,31 @@
             </div>
         </div>
     </div>
+    <!-- Image export modal -->
+    <div id="image-format-modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="all-options" style="text-align: center;">
+                <label>Image format</label>
+                <br><br>
+                <input type="radio" name="format" value="png" checked> <label>PNG</label>
+                <input type="radio" name="format" value="jpg"> <label>JPEG</label>
+                <br>
+                <input type="radio" name="format" value="gif"> <label>GIF</label>
+                <input type="radio" name="format" value="bmp"> <label>BMP</label>
+                <br>
+                <div style="text-align: center;">
+                    <button id="export-btn">Export</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="./js/modal.js"></script>
     <script src="./js/settings.js"></script>
     <script src="./js/doodle.js"></script>
     <script src="./js/clear.js"></script>
+    <script src="./js/image-export.js"></script>
 </body>
 
 </html>
